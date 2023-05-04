@@ -130,7 +130,7 @@ $begin 'AnsoftProject'
 		$begin 'Scripts'
 		$end 'Scripts'
 		$begin 'Symbols'
-			$begin '24GHz_Backscatter'
+			$begin '24GHzPlanarVAABackscatter'
 				ModTime=1611117846
 				Library=''
 				ModSinceLib=false
@@ -142,20 +142,20 @@ $begin 'AnsoftProject'
 					Rect(0, 0, 0, 0, 0.00254, 0.00254, 0.00508, 0.00508, 0, 0, 0)
 					Rect(0, 1, 0, 0, 0.000423333333333333, 0.00254, 0.000423333333333333, 0.000423333333333334, 0, 0, 0)
 				$end 'Graphics'
-			$end '24GHz_Backscatter'
+			$end '24GHzPlanarVAABackscatter'
 		$end 'Symbols'
 		$begin 'DefInfo'
-			'24GHz_Backscatter'(1002, 0, 0, 0, '', 1611117846, '', '24GHz_Backscatter', '', '', '', '', '', 'Design.bmp', '', 'Project', '', '', 1611117846, '', 0, 0)
+			'24GHzPlanarVAABackscatter'(1002, 0, 0, 0, '', 1611117846, '', '24GHzPlanarVAABackscatter', '', '', '', '', '', 'Design.bmp', '', 'Project', '', '', 1611117846, '', 0, 0)
 		$end 'DefInfo'
 		$begin 'Compdefs'
-			$begin '24GHz_Backscatter'
+			$begin '24GHzPlanarVAABackscatter'
 				Library=''
 				CircuitEnv=0
 				Refbase='U'
 				NumParts=1
 				ModSinceLib=true
 				$begin 'Properties'
-					TextProp('Representation', 'SRD', '', '24GHz_Backscatter')
+					TextProp('Representation', 'SRD', '', '24GHzPlanarVAABackscatter')
 					TextProp('Owner', 'SRD', '', 'HFSS')
 				$end 'Properties'
 				CompExtID=6
@@ -174,14 +174,14 @@ $begin 'AnsoftProject'
 					$end 'CosimDefinition'
 					DefaultCosim='DefaultNetlist'
 				$end 'CosimDefinitions'
-			$end '24GHz_Backscatter'
+			$end '24GHzPlanarVAABackscatter'
 		$end 'Compdefs'
 	$end 'Definitions'
 	DesignIDServer=3
 	MoveBackwards=false
 	$begin 'HFSSModel'
 		RepRewriteV2=true
-		Name='24GHz_Backscatter'
+		Name='24GHzPlanarVAABackscatter'
 		DesignID=1
 		'Use Advanced DC Extrapolation'=false
 		'Use Power S'=false
@@ -254,7 +254,7 @@ $begin 'AnsoftProject'
 			WorkingCS=1
 			$begin 'GeometryCore'
 				BlockVersionID=3
-				DataVersion=564
+				DataVersion=565
 				NativeKernel='ACIS'
 				NativeKernelVersionID=13
 				Units='mm'
@@ -486,7 +486,7 @@ $begin 'AnsoftProject'
 						$end 'GeometryPart'
 						$begin 'GeometryPart'
 							$begin 'Attributes'
-								Name='Antenna_array'
+								Name='antennaArray'
 								Flags=''
 								Color='(255 128 0)'
 								Transparency=0
@@ -546,7 +546,7 @@ $begin 'AnsoftProject'
 						$end 'GeometryPart'
 						$begin 'GeometryPart'
 							$begin 'Attributes'
-								Name='Diode_eq_circuit'
+								Name='diodeEq'
 								Flags='Wireframe#'
 								Color='(0 0 255)'
 								Transparency=0
@@ -606,7 +606,7 @@ $begin 'AnsoftProject'
 						$end 'GeometryPart'
 						$begin 'GeometryPart'
 							$begin 'Attributes'
-								Name='Silk_position'
+								Name='SILK'
 								Flags=''
 								Color='(255 0 0)'
 								Transparency=0
@@ -666,7 +666,7 @@ $begin 'AnsoftProject'
 						$end 'GeometryPart'
 						$begin 'GeometryPart'
 							$begin 'Attributes'
-								Name='Via'
+								Name='VIA'
 								Flags='Wireframe#'
 								Color='(255 255 0)'
 								Transparency=0
@@ -820,9 +820,6 @@ $begin 'AnsoftProject'
 						$begin 'allobjects'
 							allobjects(-1)
 						$end 'allobjects'
-						$begin 'antenna_array'
-							antenna_array(-1)
-						$end 'antenna_array'
 						$begin 'antenna_move_y:xy'
 							'antenna_move_y:xy'(-1)
 						$end 'antenna_move_y:xy'
@@ -832,9 +829,12 @@ $begin 'AnsoftProject'
 						$begin 'antenna_move_y:yz'
 							'antenna_move_y:yz'(-1)
 						$end 'antenna_move_y:yz'
-						$begin 'diode_eq_circuit'
-							diode_eq_circuit(-1)
-						$end 'diode_eq_circuit'
+						$begin 'antennaarray'
+							antennaarray(-1)
+						$end 'antennaarray'
+						$begin 'diodeeq'
+							diodeeq(-1)
+						$end 'diodeeq'
 						$begin 'global'
 							global(-1)
 						$end 'global'
@@ -1426,9 +1426,9 @@ $begin 'AnsoftProject'
 						$begin 'relativecs99:yz'
 							'relativecs99:yz'(-1)
 						$end 'relativecs99:yz'
-						$begin 'silk_position'
-							silk_position(-1)
-						$end 'silk_position'
+						$begin 'silk'
+							silk(-1)
+						$end 'silk'
 						$begin 'substrate'
 							substrate(-1)
 						$end 'substrate'
@@ -1712,7 +1712,7 @@ $begin 'AnsoftProject'
 		Notes=$begin_cdata$ $end_cdata$
 		$begin 'AnimationSetups'
 		$end 'AnimationSetups'
-		CacheHeaderFile='HDR6E6A1057616812256516.tmp'
+		CacheHeaderFile='HDR32F42769616831776903.tmp'
 	$end 'HFSSModel'
 	$begin 'DataInstances'
 		DesignEditor='TopLevel'
@@ -1721,7 +1721,7 @@ $begin 'AnsoftProject'
 			$begin 'Compinst'
 				ID='0'
 				Status='Status'
-				CompName='24GHz_Backscatter'
+				CompName='24GHzPlanarVAABackscatter'
 				GatesInUse()
 				$begin 'Properties'
 					TextProp('ID', 'SRID', '', '0')
@@ -1733,13 +1733,13 @@ $begin 'AnsoftProject'
 			$end 'Compinst'
 		$end 'CompInstances'
 		$begin 'Instance'
-			DesignEditor='24GHz_Backscatter'
+			DesignEditor='24GHzPlanarVAABackscatter'
 			ID='0'
 			$begin 'HfssDesignInstance'
 				DesignInstanceID=2
 				$begin 'WindowPosition'
 					$begin 'EditorWindow'
-						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -12, -52, 132, 132, 2981, 952), OrientationMatrix(-0.021210128441453, -0.0122456774115562, 0.0173180010169744, 0, 0.021210128441453, -0.0122456774115562, 0.0173180010169744, 0, -2.22044578455252e-16, 0.0244913548231125, 0.0173180010169744, 0, 1.48119020462036, 0.121906280517578, -5.00453042984009, 1, 0, -0.375122904777527, 3.02375555038452, -0.804953694343567, 0.968373656272888, -3.08979749679565, 13.1023769378662), Drawings[7: 'Substrate', 'GND', 'Antenna_array', 'Diode_eq_circuit', 'Silk_position', 'Via', 'PinHeader'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=1, dYForGrid=1, dZForGrid=1, dRForGrid=1, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
+						Circuit(Editor3d(View('View Orientation Gadget'=1, WindowPos(3, -1, -1, -12, -52, 132, 132, 2893, 952), OrientationMatrix(-0.021210128441453, -0.0122456774115562, 0.0173180010169744, 0, 0.021210128441453, -0.0122456774115562, 0.0173180010169744, 0, -2.22044578455252e-16, 0.0244913548231125, 0.0173180010169744, 0, 1.48119020462036, 0.121906280517578, -5.00453042984009, 1, 0, -0.410419583320618, 3.05905199050903, -0.804953694343567, 0.968373656272888, -3.08979606628418, 13.1023750305176), Drawings[7: 'Substrate', 'GND', 'antennaArray', 'diodeEq', 'SILK', 'VIA', 'PinHeader'], 'View Data'('Render Mode'=1, 'Show Ruler'=1, 'Coordinate Systems View Mode'=1, 'CS Triad View Mode'=0, 'Render Facets'=1, GridVisible=1, GridAutoAdjust=1, GridAutoExtents=1, GridType='Rect', GridStyle='Line', NumPixels=30, dXForGrid=2, dYForGrid=2, dZForGrid=2, dRForGrid=2, dThetaForGrid=10), ClipPlanes(ClipPlaneOptions(DisableWhenDrawingNewPlane=true, ForceOpqaueForUnclipped=false, ShowClipped=false, Transparency=0, HandleColor=16776960)))))
 					$end 'EditorWindow'
 				$end 'WindowPosition'
 				$begin 'ReportSetup'
@@ -1767,14 +1767,14 @@ $begin 'AnsoftProject'
 			$end 'HfssDesignInstance'
 		$end 'Instance'
 		$begin 'SODInfo'
-			$begin '24GHz_Backscatter'
+			$begin '24GHzPlanarVAABackscatter'
 				$begin 'CosimDefinition'
 					CosimDefName='DefaultNetlist'
 					$begin 'SODInstanceMap'
 					$end 'SODInstanceMap'
 					SODComponentList()
 				$end 'CosimDefinition'
-			$end '24GHz_Backscatter'
+			$end '24GHzPlanarVAABackscatter'
 		$end 'SODInfo'
 	$end 'DataInstances'
 	$begin 'WBSystemIDToDesignInstanceIDMap'
@@ -1797,8 +1797,8 @@ NumFiles= 7
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0000006.sab
 BIN000000050896
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
      €@À     €@À¦
 F%uÊ¿     €@@     €@@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6	Substrate	lump%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ       
      €@À     €@À¦
@@ -2453,8 +2453,8 @@ F%uÊ¿%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ]  ¥îÛ #  %   ÿÿÿÿÿÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -2467,8 +2467,8 @@ $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0000034.sab
 BIN000000017675
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
      €@À     €@À¦
 F%uÊ¿     €@@     €@@¦
 F%uÊ¿string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6GND	lump%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ       
@@ -2728,8 +2728,8 @@ F%uÊ¿End-of-ACIS-data
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -2741,10 +2741,10 @@ ANSOFT OFFSET: 16849
 $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0006039.sab
-BIN000000354785
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
-B`åĞ"s9À     €@À             €@@J+‡6=@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6Antenna_array	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+BIN000000354783
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+B`åĞ"s9À     €@À             €@@J+‡6=@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6antennaArray	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 >
 ×£pM+@Ò"Ûù~Š<À        p=
 ×£ -@7‰A`å0:À        transform%   ÿÿÿÿÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?rgb_color%	   st%
@@ -2754,7 +2754,7 @@ ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 20
 shell%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 >
 ×£pM+@Ò"Ûù~Š<À        p=
-×£ -@7‰A`å0:À        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ Antenna_array—           €ÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Antenna_array4ÿÿÿÿ         €ÿ€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+×£ -@7‰A`å0:À        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ antennaArray—           €ÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Antenna_array4ÿÿÿÿ         €ÿ€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 /İ$¡@Ò"Ûù~Š<À        ‚•C‹lG@7‰A`å0:À        %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 4^ºIâ(@Ò"Ûù~Š<À        h‘í|?µ*@7‰A`å0:À        	face%      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      ÿÿÿÿ   
 
@@ -5594,8 +5594,8 @@ m  %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ¶boº*9ÀÆK7‰A€3À        %   ÿÿÿÿÿÿÿÿÿÿÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -5603,15 +5603,15 @@ E_SETNGS
 
 B_SYMTAB 
 E_SYMTAB 
-ANSOFT OFFSET: 353958 
+ANSOFT OFFSET: 353956 
 $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0038424.sab
-BIN000000042988
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+BIN000000042970
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
 Ûù~j¼$À²ï§Æ‹;À        p=
-×£ -@×£p=Š+@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6Diode_eq_circuit	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+×£ -@×£p=Š+@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6diodeEq	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 /İ$a@åz®Gá*@        ‚•C‹lG@×£p=Š+@        transform%   ÿÿÿÿÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?rgb_color%	   st%
    %   ÿÿÿÿÿÿÿÿ          Æîß                       ğ?properties%   ansoft%   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Rectangle52_4_2ÿÿÿÿ        ¯€%   	   ÿÿÿÿÿÿÿÿÿÿÿÿ
           
@@ -5621,7 +5621,7 @@ shell%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 /İ$a@²ï§Æ‹;À        ‚•C‹lG@ï§ÆK7;À        %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 ÓMbXI Àİz®Gá*@        @5^ºI¬À×£p=Š+@        	face%      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      ÿÿÿÿ   
 
-/İ$a@åz®Gá*@        ‚•C‹lG@×£p=Š+@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ Diode_eq_circuit–         ÿ  €%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+/İ$a@åz®Gá*@        ‚•C‹lG@×£p=Š+@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ diodeEq–         ÿ  €%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
    ¥îÛ Rectangle52_2ÿÿÿÿ        ¯€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 ÓMbXI À²ï§Æ‹;À        @5^ºI¬Àï§ÆK7;À        %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ
    
@@ -5980,8 +5980,8 @@ point%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ/İ$a@æz®Gá*@        %   %   %   ÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -5989,20 +5989,20 @@ E_SETNGS
 
 B_SYMTAB 
 E_SYMTAB 
-ANSOFT OFFSET: 42162 
+ANSOFT OFFSET: 42144 
 $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0040335.sab
-BIN000000208912
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
--²ï'&À33333ó;À        )\Âõ˜-@®Gáz-@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6Silk_position	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+BIN000000208894
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+-²ï'&À33333ó;À        )\Âõ˜-@®Gáz-@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6SILK	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 ñÒMbØ&@«Gáz®*@        ¿Ÿ/İ¤'@y®Gáz+@        transform%   ÿÿÿÿÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?rgb_color%	   st%
    %   ÿÿÿÿÿÿÿÿ          Æîß       ğ?                properties%   ansoft%   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Silk_positionÿÿÿÿ          ÿ€%   	   ÿÿÿÿÿÿÿÿÿÿÿÿ
           
 ¿Ÿ/İ$'@Eáz®G,@        ñÒMbX'@®Gáz-@        
 shell%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
-ñÒMbØ&@«Gáz®*@        ¿Ÿ/İ¤'@y®Gáz+@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ Silk_position            ÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Silk_positionÿÿÿÿ          ÿ€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+ñÒMbØ&@«Gáz®*@        ¿Ÿ/İ¤'@y®Gáz+@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ SILK            ÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ Silk_positionÿÿÿÿ          ÿ€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 @´Èv¾ŸÀDáz®G*@        •C‹l	À®Gáz+@        %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 ¿Ÿ/İ$'@Eáz®G,@        ñÒMbX'@®Gáz-@        	face%      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      ÿÿÿÿ   
 
@@ -7874,8 +7874,8 @@ point%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ¿Ÿ/İ¤'@{®Gáú*@        %   %   %   ÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -7883,14 +7883,14 @@ E_SETNGS
 
 B_SYMTAB 
 E_SYMTAB 
-ANSOFT OFFSET: 208085 
+ANSOFT OFFSET: 208067 
 $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0042195.sab
 BIN000000026921
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
-?`åĞ"Û"ÀV-²}:À        ´Èv¾Ÿ=@¯Gázn)@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6Via	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+?`åĞ"Û"ÀV-²}:À        ´Èv¾Ÿ=@¯Gázn)@        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6VIA	lump%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 Ÿ/İ$v!ÀIáz®)@        8´Èv¾!À¯Gázn)@        transform%   ÿÿÿÿÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?rgb_color%	   st%
    %   ÿÿÿÿÿÿÿÿ          Æîß       ğ?      ğ?        properties%   ansoft%   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ viaÿÿÿÿ        ¯€%   	   ÿÿÿÿÿÿÿÿÿÿÿÿ
           
@@ -7904,7 +7904,7 @@ shell%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ   
 ×£€+@V-²}:À        Ø£p=
 ç+@Ğ"Ûù~J:À        	face%      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ      ÿÿÿÿ   
 
-Ÿ/İ$v!ÀIáz®)@        8´Èv¾!À¯Gázn)@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ViaÓ¤          ÿÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Ÿ/İ$v!ÀIáz®)@        8´Èv¾!À¯Gázn)@        %   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ VIAÓ¤          ÿÿ€%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
    ¥îÛ viaÿÿÿÿ        ¯€%      ÿÿÿÿÿÿÿÿÿÿÿÿ          
 z?5^ºÉó¿V-²}:À        @+‡–ğ¿Ğ"Ûù~J:À        %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ÿÿÿÿ
    
@@ -8088,8 +8088,8 @@ point%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ8´Èv¾!À|®Gá:)@        %   %   %   ÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -8102,8 +8102,8 @@ $end 'sab'
 $begin 'sab'
 Design_1.setup/NativeGeometryFiles/0042598.sab
 BIN000000011611
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MCHJGBJBNQ3JDT998_PDPWBZA38544SPEDACMJXPAF8C4KAQX69TUS2743CSMJPQ2F8TUJJ67YA4MM	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MEQ3CS_DF2H7J5UVTT5Q8QNYBZ77C6BNCHC_4KE6U2BSKMCNCUCP4QCNA39KMNM73BDSBK4QUEANVS	body%      ÿÿÿÿÿÿÿÿÿÿÿÿ       ÿÿÿÿ   
 9´Èv¾Ÿ9@`åĞ"Û9?À        Èv¾Ÿ/=@`åĞ"Û¹6À        string_attrib%   name_attrib%   gen%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¦îß ATTRIB_XACIS_NAME%6	PinHeader	lump%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ          
 C‹lçû)<@`åĞ"Ûù9À        Èv¾Ÿ/=@`åĞ"Û¹6À        transform%   ÿÿÿÿÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?rgb_color%	   st%
    %   ÿÿÿÿÿÿÿÿ          Æîß òñññññá?ôóóóóóã?öõõõõõå?%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   	       
@@ -8161,8 +8161,8 @@ point%   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿC‹lçû)<@`åĞ"Ûù9À        %   %   %   ÿÿ
 # Ansoft project setting data. Non-Ansoft programs
 # should not read the rest of this file.
 B_SETNGS 1.03
-ACIS BinaryFileT             SpatialACIS 29.0.1 NTWed Apr 12 00:14:43 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
-MWWJRUYHFADNP2YR4NVERMCQMB5SV7S6MSCU4MEP2KAG4P6NEBCPKNEQ4BCFVJ4Q8BAQUQG77BCQCRtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
+ACIS BinaryFileT             SpatialACIS 29.0.1 NTThu May  4 14:21:30 2023      ğ?íµ ÷Æ°>»½×Ùß|Û=
+MTMSFREVZ4262K78TYJKFZF5SF6PC5B7EDC7MQP7VA8RKERPW29PCRPP7UAVMKCNBUAR3QVPBUAMCKtransform%      ÿÿÿÿ      ğ?                              ğ?                              ğ?                              ğ?
 point%      ÿÿÿÿÿÿÿÿÿÿÿÿ                        	flag%   ansoft%   attrib%   ÿÿÿÿÿÿÿÿ   ÿÿÿÿ    ¥îÛ     
 color%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ   ¥îÛ ÿ ÿ€
 units%   %   %   ÿÿÿÿÿÿÿÿ          ¥îÛ mm     @@%   %   %   ÿÿÿÿÿÿÿÿÿÿÿÿ       ¥îÛ ÀÀÀ€End-of-ACIS-data
@@ -8300,7 +8300,7 @@ U4PRcL4Y8A2Hh2/m16+1nxH4x8V3NnJp8/irxbqMN3fpYSzW8stjo+j6VZ2ej+ErOYWGkC8i0XTNOTU\
 n0OzutTW9vYFuq7qiivQjGMFaKsvz829231b1fU9OMIwXLFWX4t923q2+rd23q2FFFFUUFFFFABRRRQ\
 AUUUUAFFFFABRRRQAUUUUAf//Z'
 	$begin 'DesignInfo'
-		DesignName='24GHz_Backscatter'
+		DesignName='24GHzPlanarVAABackscatter'
 		Notes=''
 		Factory='HFSS'
 		IsSolved=false
