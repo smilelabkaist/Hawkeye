@@ -13,7 +13,7 @@ We note that we do not upload the files provided by Analog Devices, due to possi
 
 ## Hawkeye HardWare Design
 ### Design Overview
-<img style="float: right;" src="./Hardware/HardwareFigure.png" width="300px" height="300px" title="hardware"></img>
+<img align="right" src="./Hardware/HardwareFigure.png" width="300px" height="300px" title="hardware"></img>
 Hawkeye backscatter tag is a planar Van Atta Array (VAA) combined with a power-efficient low-loss FSK modulator using a hybrid coupler.
 The tag retro-reflects in both azimuth (90° FoV) and elevation (140° FoV).
 Hawkeye tag is tuned to demonstrate S11 of -10 dB throughout the entire 250 MHz bandwidth, where FSK modulation is performed by the combination of reflective network and low-loss 90° hybrid coupler co-optimized for efficient VAA reflection. 
