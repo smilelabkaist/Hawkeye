@@ -31,5 +31,5 @@ __*(2) Modulator Design*__
 <br/> Hawkeye modulator uses PIN diode (MADP-000907-14020) whose equivalent circuit is represented in R, L, and C components. The effect of diode is simulated via lumped RLC boundary in HFSS. 
 
 __*(3) VAA Design*__
-<br/> To keep the VAA retro-reflectivity, all TLs should induce the same phase shift. To do this, (1) we checked the S21 of TLs first and optimized each TL length as they have equally induced phases. (2) Later, we attached the modulator and 
+<br/> To keep the VAA retro-reflectivity, all TLs should induce the same phase shift. To do this, we follows below process. (1) we checked the S21 of TLs first and optimized each TL length as they have equally induced phases. (2) Later, we attached the modulator and 
 optimized the TL lengths and gaps between TLs to compensate for the coupling effect between the modulator and the TLs. (3) Lastly, we combined the antenna with modulator & TL, and checked the retro-reflectivity performance via the Monostatic RCS plot of HFSS, with Incident wave excitation.
