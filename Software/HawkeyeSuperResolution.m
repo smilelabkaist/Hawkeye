@@ -21,20 +21,20 @@
 %% Specify super-resolution options.
 
 numTags = 1; % Number of tags to detect. If numTags = n, the strongest n signals in tag bin will be analyzed.
-plotProcess = 0; % Plot the super-resolution process. 0 for no plot, 1 for plot in every step, 2 for just the result.
+plotProcess = 1; % Plot the super-resolution process. 0 for no plot, 1 for plot in every step, 2 for just the result.
 numZeroPads = 1024; % Number of zeros to pad for Hawkeye super-resolution. Refer to the paper for more information.
-maxRange = 100; % Default is inf. For better performance, apply the max range limit.
+maxRange = 100; % Default is inf. For better performance, apply the max range limit. (In meters)
 receiverAntenna = 1; % Select the receiver antenna to use. Options are 1 to 4.
 fModMax = 149; % Input maximum tag modulation frequency, in kHz.
 fModMin = 151; % Input minimum tag modulation frequency, in kHz.
 mobileTagLocalizationInterval = 40; % Mobile tag localization interval in #chirps.
-applyAdvancedSR = 1; % 0:OFF, 1:ON. Apply a slower, but more accurate super resolution algorithm. Typically recommended when range < 3 meter.
+applyAdvancedSR = 0; % 0:OFF, 1:ON. Apply a slower, but more accurate super resolution algorithm. Typically recommended when range < 3 meter.
 mobileTagLocalization = 0; % 0:OFF, 1:ON. Turn on if tag is mobile.
 tagOffset = 0.173; % Tag distance offset.
 
 processingType = (mobileTagLocalization)*3+applyAdvancedSR+1;
 
-%% Load the raw data
+%% Load the raw data.
 
 filename = ''; % Input the raw data file name.
 
@@ -66,7 +66,6 @@ chnTemp(1:chnCount-1)=chn(1:chnCount-1);
 chn=chnTemp;
 
 freqResult = fft(chn);
-% fftLength = double(N);
 freqLength = length(freqResult);
 freqResultAbs = abs(freqResult/freqLength);
 freqResultFinal = fftshift(freqResultAbs);
@@ -78,6 +77,9 @@ frequencykHz=frequencyHz/1000;
 if plotProcess==1
     figure
     plot(frequencykHz, freqResultFinal)
+    title('HD-FMCW Result')
+    xlabel('Frequency (kHz)')
+    ylabel('Amplitude')
 end
 
 freqResultFinalComplex = fftshift(freqResult/freqLength);
@@ -103,10 +105,13 @@ end
 
 if plotProcess == 1
     figure()
-    plot(frequencykHz, freqResultFinal) 
+    plot(frequencykHz, freqResultFinal)
+    title('Clutter Rejection Result')
+    xlabel('Frequency (kHz)')
+    ylabel('Amplitude')
 end
 
-%% Check the noise floor
+%% Check the noise floor.
 
 noiseFreqLow = interp1(frequencyHz,1:length(frequencyHz),499.95e3,'nearest');
 noiseFreqHigh = interp1(frequencyHz,1:length(frequencyHz),499.99e3,'nearest');
@@ -189,7 +194,7 @@ if (processingType == 4)||(processingType == 5)
             totalPaddedFreqData(:,tempTagIndex) = abs(paddedFreqData);
             totalPaddedFreq(:,tempTagIndex) = paddedFreqkHz;
     
-            %% find f_dist
+            %% Find the radar-tag range.
     
             paddedFreqDataCut = zeros(length(paddedFreqData),1);
     
@@ -220,11 +225,8 @@ if (processingType == 4)||(processingType == 5)
                 peakFreq2 = b(sortedPeakIndex(2));
             end
     
-    
             freqDistance = abs(peakFreq1-peakFreq2)/2*1000;
-    
-            %% calculate distance
-    
+
             lightSpeed = physconst('LightSpeed');
     
             distanceResult = freqDistance*lightSpeed*(N-1)/(2*1e6*250*1e6) - tagOffset
@@ -232,18 +234,19 @@ if (processingType == 4)||(processingType == 5)
             if plotProcess > 0
                 figure()
                 plot(totalPaddedFreq(:,tempTagIndex),totalPaddedFreqData(:,tempTagIndex)); 
-                title(filename)
-                %xlim([198,202]);
+                title('Hawkeye Result')
+                xlabel('Frequency (kHz)')
+                ylabel('Amplitude')
             end
             
     
-            %% Save Peak Amplitude
+            %% Save peak amplitude.
     
             refPeakSample = min(interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq1,'nearest'), interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq2,'nearest'));
             farPeakSample = max(interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq1,'nearest'), interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq2,'nearest'));
             freqPeakMean = (totalPaddedFreqData(refPeakSample,tempTagIndex)+totalPaddedFreqData(farPeakSample,tempTagIndex))/2;
 
-            %% Do RMS compare.
+            %% Apply advancedSR. Find exact radar-tag range by the recovered sinc function.
     
             if processingType == 5
     
@@ -301,6 +304,9 @@ if (processingType == 4)||(processingType == 5)
                     plot(totalPaddedFreq(:,tempTagIndex),totalPaddedFreqData(:,tempTagIndex));
                     hold on
                     plot(totalPaddedFreq(:,tempTagIndex),sincsFinal)
+                    title('Hawkeye Result')
+                    xlabel('Frequency (kHz)')
+                    ylabel('Amplitude')
                     hold off
                     drawnow;
      
@@ -327,7 +333,7 @@ if (processingType == 1) || (processingType == 2)
     end
 
 
-    %% New data for padding
+    %% Zero-pad the tag signal.
     sampledFreqResult = zeros(tagIndexes(1,numTags),numTags);
     sampledFreqkHz = zeros(tagIndexes(1,numTags),numTags);
     for tempTagIndex = 1:numTags
@@ -364,9 +370,13 @@ if (processingType == 1) || (processingType == 2)
         [maxImpulseValue, maxImpulseIndex] = max(tagData(:,tempTagIndex));
         maxImpulseFreq = frequencykHz(maxImpulseIndex);
 
-        %% calibrate freq offset (for plotting)
-        candidates = find(round(abs(paddedFreqData),5)==round(maxImpulseValue,5));
-        %max 2 candidtates
+        %% Calibrate freq. offset (only for plotting purposes).
+
+        candidates = find(round(abs(paddedFreqData),6)==round(maxImpulseValue,6));
+        if length(candidates) == 0
+            candidates = find(round(abs(paddedFreqData),5)==round(maxImpulseValue,5));
+        end
+
         if length(candidates) == 2
            if abs(paddedFreqkHz(candidates(1)) - maxImpulseFreq) > abs(paddedFreqkHz(candidates(2)) - maxImpulseFreq)
               candidates(1) = candidates(2);
@@ -379,7 +389,7 @@ if (processingType == 1) || (processingType == 2)
         totalPaddedFreqData(:,tempTagIndex) = abs(paddedFreqData);
         totalPaddedFreq(:,tempTagIndex) = paddedFreqkHz;
 
-        %% find f_dist
+        %% Find radar-tag range.
 
         paddedFreqDataCut = zeros(length(paddedFreqData),1);
 
@@ -415,13 +425,11 @@ if (processingType == 1) || (processingType == 2)
         
         freqDistance = abs(peakFreq1-peakFreq2)/2*1000;
 
-        %% calculate distance
-
         lightSpeed = physconst('LightSpeed');
 
         distanceResult = freqDistance*lightSpeed*(tagIndexes(1,numTags)-1)/(2*1e6*250*1e6) - tagOffset
 
-        %% Save Peak Amplitude
+        %% Save the peak amplitude.
 
         refPeakSample = min(interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq1,'nearest'), interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq2,'nearest'));
         farPeakSample = max(interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq1,'nearest'), interp1(paddedFreqkHz,1:length(paddedFreqkHz), peakFreq2,'nearest'));
@@ -434,13 +442,15 @@ if (processingType == 1) || (processingType == 2)
                 plot(frequencykHz,tagData(:,tempTagIndex),'k','LineWidth',1)
                 hold on
                 plot(totalPaddedFreq(:,tempTagIndex),totalPaddedFreqData(:,tempTagIndex)); 
+                title('Hawkeye Result')
+                xlabel('Frequency (kHz)')
+                ylabel('Amplitude')
                 hold off
-                title(num2str((peakFreq1+peakFreq2)/2));
-                %xlim([198,202]);
             end
             
         end
-        %% Do RMS compare.
+
+        %% Apply advancedSR. Find exact radar-tag range by the recovered sinc function.
 
         if processingType == 2
 
@@ -498,9 +508,10 @@ if (processingType == 1) || (processingType == 2)
                 hold on
                 plot(totalPaddedFreq(:,tempTagIndex),totalPaddedFreqData(:,tempTagIndex));
                 plot(totalPaddedFreq(:,tempTagIndex),sincsFinal)
+                title('Hawkeye Result')
+                xlabel('Frequency (kHz)')
+                ylabel('Amplitude')
                 hold off
-                title(num2str((peakFreq1+peakFreq2)/2))
-                xlim([120,180]);
                 drawnow;
  
             end
