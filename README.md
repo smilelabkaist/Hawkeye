@@ -11,7 +11,7 @@ We note that we do not upload the files provided by Analog Devices, due to possi
 
 **The code is currently being modified for clarity.**
 
-## Hawkeye HardWare Design
+## Hawkeye Hardware Design
 ### Design Overview
 <img align="right" src="./Hardware/HardwareFigure.png" width="300px" height="300px" title="hardware"></img>
 Hawkeye backscatter tag is a planar Van Atta Array (VAA) combined with a power-efficient low-loss FSK modulator using a hybrid coupler.
