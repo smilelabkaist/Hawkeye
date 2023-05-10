@@ -1,5 +1,5 @@
-# Hawkeye
-MobiSys '23, Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter
+# Hawkeye Hardware Design and Localization Tool
+MobiSys '23, Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter [[1]](#1)
 
 Consists of two folders.
 The Hardware folder contains the Hawkeye tag design file, which can be opened using HFSS software.
@@ -8,8 +8,6 @@ The Software folder contains the Hawkeye super-resolution algorithm file in matl
 You can find the sample inputs for Hawkeye super-resolution algorithm at https://drive.google.com/file/d/1dW7adJCa1oWd-Ku77HN8pgqjcEb8F1y5/view?usp=share_link.
 
 We note that we do not upload the files provided by Analog Devices, due to possible copyright issues.
-
-**The code is currently being modified for clarity.**
 
 ## Hawkeye Hardware Design
 ### Design Overview
@@ -33,3 +31,15 @@ __*(2) Modulator Design*__
 __*(3) VAA Design*__
 <br/> To keep the VAA retro-reflectivity, all TLs should induce the same phase shift. To do this, we follows below process. (1) we checked the S21 of TLs first and optimized each TL length as they have equally induced phases. (2) Later, we attached the modulator and 
 optimized the TL lengths and gaps between TLs to compensate for the coupling effect between the modulator and the TLs. (3) Lastly, we combined the antenna with modulator & TL, and checked the retro-reflectivity performance via the Monostatic RCS plot of HFSS, with Incident wave excitation.
+
+## Hawkeye Localization Tool
+The Hawkeye localization tool consists of two matlab codes: (i) HawkeyeSuperResolution.m is the main file, which takes raw data from EVAL-TINYRAD as input, and outputs the Hawkeye localization result. The code first applies HD-FMCW [[2]](#2) to the input data, to isolate tag signal from clutter noise. Afterwards, the clutter noise is rejected, followed by Hawkeye super-resolution algorithm. (ii) sincMakePhase.m file provides a function for HawkeyeSuperResolution.m, which is optinally called when applyAdvancedSR is turned on (recommended when tag range < 3 meters).
+
+If you apply our tool in your research, please cite our paper [[1]](#1). For troubleshooting, please contact the co-primary authors: Kang Min Bae (bkm2259@kaist.ac.kr), Hankyeol Moon (moonkyul1@kaist.ac.kr). 
+
+## Reference
+<a id="1">[1]</a> 
+Kang Min Bae, Hankyeol Moon, Sung-Min Sohn, and Song Min Kim. "Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter", MobiSys '23.
+
+<a id="2">[2]</a> 
+Kang Min Bae, Namjo Ahn, Yoon Chae, Parth Pathak, Sung-Min Sohn, and Song Min Kim. "OmniScatter: Extreme Sensitivity mmWave Backscattering using Commodity FMCW Radar", MobiSys '22.
