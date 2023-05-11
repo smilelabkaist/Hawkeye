@@ -6,7 +6,7 @@ The repository consists of two folders.
 The Hardware folder contains the Hawkeye tag design file, which can be opened using HFSS software.
 The Software folder contains the Hawkeye super-resolution algorithm file in matlab, with example inputs. The inputs are generated with EVAL-TINYRAD from Analog Devices.
 
-We note that we do not upload the matlab files provided by Analog Devices, due to possible copyright issues.
+We note that we do not upload the codes provided by Analog Devices, due to possible copyright issues.
 
 ## Hawkeye Hardware Design
 ### Design Overview
