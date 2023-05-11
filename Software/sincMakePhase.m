@@ -24,8 +24,8 @@ function resultFunc = sincMakePhase(dataLength, numZeroPads, paddedFreqData, shi
     phase = 4*pi*distanceResult/lambda;
     phaseDifference = 2*phase;
     
-    x=ones(dataLength,1);
-    x = [x ; zeros(numZeroPads*dataLength,1)];
+    x = zeros(numZeroPads*dataLength,1);
+    x(1:dataLength) = 1;
 
     Y=fft(x);
     L = length(Y);
