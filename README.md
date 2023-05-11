@@ -1,13 +1,12 @@
 # Hawkeye Hardware Design and Localization Tool
-Welcome to Hawkeye hardware design and localization tool, which are the artifacts for MobiSys '23, Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter [[1]](#1)
+Welcome to Hawkeye hardware design and localization tool.
+This is the artifact for MobiSys '23, Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter [[1]](#1)
 
 The repository consists of two folders.
 The Hardware folder contains the Hawkeye tag design file, which can be opened using HFSS software.
-The Software folder contains the Hawkeye super-resolution algorithm file in matlab, which works with EVAL-TINYRAD from Analog Devices.
+The Software folder contains the Hawkeye super-resolution algorithm file in matlab, with example inputs. The inputs are generated with EVAL-TINYRAD from Analog Devices.
 
-You can find the sample inputs for Hawkeye super-resolution algorithm at https://drive.google.com/file/d/1dW7adJCa1oWd-Ku77HN8pgqjcEb8F1y5/view?usp=share_link.
-
-We note that we do not upload the files provided by Analog Devices, due to possible copyright issues.
+We note that we do not upload the matlab files provided by Analog Devices, due to possible copyright issues.
 
 ## Hawkeye Hardware Design
 ### Design Overview
