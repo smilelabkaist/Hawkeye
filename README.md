@@ -1,7 +1,25 @@
 # Hawkeye Hardware Design and Localization Tool
 Welcome to Hawkeye hardware design and localization tool.
 This is the artifact for MobiSys '23, Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter [[1]](#1)
+<details><summary> <strong>Cite this tool</strong>
+</summary>
 
+  ### Plain Text
+  ```
+Kang Min Bae, Hankyeol Moon, Sung-Min Sohn, and Song Min Kim. 2023. Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter. In Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services (MobiSys '23). Association for Computing Machinery, New York, NY, USA, 303–316. https://doi.org/10.1145/3581791.3596869
+```
+ ### BibTex
+ 
+ ```
+@inproceedings{bae2023hawkeye,
+　title={Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter},
+　author={Bae, Kang Min and Moon, Hankyeol and Sohn, Sung-Min and Kim, Song Min},
+　booktitle={Proceedings of the 21st Annual International Conference on Mobile Systems, Applications and Services},
+　pages={303--316},
+　year={2023}
+}  
+  ```
+</details>
 The repository consists of two folders.
 The Hardware folder contains the Hawkeye tag design file, which can be opened using HFSS software.
 The Software folder contains the Hawkeye super-resolution algorithm file in matlab, with example inputs. The inputs are generated with EVAL-TINYRAD from Analog Devices.
