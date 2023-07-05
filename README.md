@@ -54,6 +54,9 @@ The Hawkeye localization tool consists of two matlab codes: (i) HawkeyeSuperReso
 
 If you apply our tool in your research, please cite our paper [[1]](#1). For troubleshooting, please contact the co-primary authors: Kang Min Bae (bkm2259@kaist.ac.kr), Hankyeol Moon (moonkyul1@kaist.ac.kr). 
 
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
 ## Reference
 <a id="1">[1]</a> 
 Kang Min Bae, Hankyeol Moon, Sung-Min Sohn, and Song Min Kim. "Hawkeye: Hectometer-range Subcentimeter Localization for Large-scale mmWave Backscatter", MobiSys '23.
