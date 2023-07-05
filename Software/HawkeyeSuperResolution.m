@@ -10,7 +10,8 @@
 %   Organization:  Smart and Mobile Systems (Smile) Lab @ KAIST 
 %                  https://smile.kaist.ac.kr/
 %
-%   Copyright (c)  Smart and Mobile Systems (Smile) Lab @ KAIST 
+%   Copyright (c)  Smart and Mobile Systems (Smile) Lab @ KAIST
+%   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 % =====================================================================================
 %   - The code does not apply any form of beamforming. It is designed to use a single Rx and Tx antenna.
 %   - The code works best when chirp interval was integer multiple of 1/f_mod at radar.

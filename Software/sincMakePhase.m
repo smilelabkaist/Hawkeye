@@ -11,6 +11,7 @@
 %                  https://smile.kaist.ac.kr/
 %
 %   Copyright (c)  Smart and Mobile Systems (Smile) Lab @ KAIST 
+%   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 % =====================================================================================
 %
 
