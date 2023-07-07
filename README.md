@@ -52,7 +52,7 @@ optimized the TL lengths and gaps between TLs to compensate for the coupling eff
 ## Hawkeye Localization Tool
 The Hawkeye localization tool consists of two matlab codes: (i) HawkeyeSuperResolution.m is the main file, which takes raw data from EVAL-TINYRAD as input, and outputs the Hawkeye localization result. The code first applies HD-FMCW [[2]](#2) to the input data, to isolate tag signal from clutter noise. Afterwards, the clutter noise is rejected, followed by Hawkeye super-resolution algorithm. (ii) sincMakePhase.m file provides a function for HawkeyeSuperResolution.m, which is optinally called when applyAdvancedSR is turned on (recommended when tag range < 3 meters).
 
-If you apply our tool in your research, please cite our paper [[1]](#1). For troubleshooting, please contact the co-primary authors: Kang Min Bae (bkm2259@kaist.ac.kr), Hankyeol Moon (moonkyul1@kaist.ac.kr). 
+If you apply our tool in your research, please cite our paper [[1]](#1). For troubleshooting, please contact the SMILE LAB (smilelabkaist@gmail.com).
 
 ## License
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.

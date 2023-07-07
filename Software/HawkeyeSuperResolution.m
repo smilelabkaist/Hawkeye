@@ -6,7 +6,7 @@
 %        Version:  1.0
 %
 %         Author:  Kang Min Bae, Hankyeol Moon
-%         Email :  {bkm2259, moonkyul1}@kaist.ac.kr
+%         Email :  smilelabkaist@gmail.com
 %   Organization:  Smart and Mobile Systems (Smile) Lab @ KAIST 
 %                  https://smile.kaist.ac.kr/
 %
